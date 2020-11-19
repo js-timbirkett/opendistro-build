@@ -184,3 +184,4 @@ urls:
     windows_x86: "https://artifacts.elastic.co/downloads/kibana/kibana-oss-7.9.1-windows-x86_64.zip"
     windows_aarch64: ""
 
+

@@ -26,6 +26,8 @@
 #                $VERSION_TYPE (required): --od | --od-prev | --od-next
 #                                          --es | --es-prev | --es-next
 #
+# Requirements:  Need to install PyYAML with pip3
+#
 # Starting Date: 2019-05-15
 # Modified Date: 2020-11-16
 ###############################################################################################
@@ -37,7 +39,7 @@ from os import environ
 
 def get_hard_coded_version(key1, key2):
     version_file = sys.path[0] + '/' + 'manifest.yml'
-    version_info = yaml.load(open(version_file), Loader=yaml.FullLoader)
+    version_info = yaml.load(open(version_file), yaml.Loader)
     return version_info['versions'][key1][key2]
 
 
@@ -85,4 +87,5 @@ if __name__ == '__main__':
       raise Exception('invalid argument, use --es OR --od ',
                       'OR --es-prev OR --od-prev ',
                       'OR --es-next OR --od-next ')
+
 
